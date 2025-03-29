@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Jesika Tersayang</title> 
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #1d1d2e;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Bintang berkilauan */
+        .star {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: sparkle 1.5s infinite ease-in-out;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        /* Mengatur posisi bintang-bintang */
+        .star-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        /* Emoji love berputar dengan efek api */
+        .emoji {
+            font-size: 150px; /* Ukuran font love */
+            color: #ff4500;
+            animation: bounce 1.5s ease-in-out infinite, rotate 5s linear infinite, fire 1.5s ease-in-out infinite;
+        }
+
+        /* Efek api untuk love */
+        @keyframes fire {
+            0%, 100% {
+                text-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500, 0 0 30px #ff4500, 0 0 40px #ff6347, 0 0 50px #ff6347, 0 0 75px #ff6347;
+            }
+            50% {
+                text-shadow: 0 0 15px #ff6347, 0 0 25px #ff6347, 0 0 35px #ff6347, 0 0 50px #ff4500, 0 0 70px #ff4500, 0 0 90px #ff4500;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Meteor love dengan efek komet */
+        .love-meteor {
+            position: absolute;
+            font-size: 30px; /* Ukuran emoji love */
+            animation: fall 2s linear forwards, tail 2s linear forwards;
+            opacity: 1;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes tail {
+            0% {
+                text-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500, 0 0 30px #ff6347;
+            }
+            100% {
+                text-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500, 0 0 40px #ff6347;
+            }
+        }
+
+        /* Salib berbentuk + dan di kiri kanan emoji love */
+        .cross {
+            position: absolute;
+            top: calc(50% - 120px); /* Garis horizontal tetap di 25% */
+            width: 10px; /* Lebar salib */
+            height: 120px; /* Vertikal ke bawah dipendekkan 25% */
+            background-color: #ff6347;
+            box-shadow: 0 0 20px #ff4500, 0 0 30px #ff6347;
+            transform: translateY(-50%); /* Menyelaraskan vertikal */
+        }
+
+        .cross::before {
+            content: '';
+            position: absolute;
+            top: 25%; /* Garis horizontal tetap di 25% */
+            left: 50%;
+            transform: translate(-50%, -50%); /* Menyelaraskan horizontal */
+            width: 80px; /* Lebar salib horizontal */
+            height: 10px; /* Tinggi salib horizontal */
+            background-color: #ff6347;
+            box-shadow: 0 0 20px #ff4500, 0 0 30px #ff6347;
+        }
+
+        /* Posisi salib kiri */
+        .left-cross {
+            left: calc(35% - 40px); /* Menyesuaikan posisi salib */
+        }
+
+        /* Posisi salib kanan */
+        .right-cross {
+            right: calc(35% - 40px); /* Menyesuaikan posisi salib */
+        }
+
+        .button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px; /* Ukuran font tombol lebih kecil */
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff69b4;
+            color: white;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .button:hover {
+            background-color: #ff1493;
+            transform: scale(1.1);
+        }
+
+        .message {
+            font-size: 18px; /* Ukuran font pesan lebih kecil */
+            color: #fff;
+            font-weight: bold;
+            margin-top: 20px;
+            animation: fadeIn 3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Bintang-bintang berkilauan -->
+    <div class="star-container">
+        <div class="star" style="top: 10%; left: 30%;"></div>
+        <div class="star" style="top: 20%; left: 70%;"></div>
+        <div class="star" style="top: 50%; left: 40%;"></div>
+        <div class="star" style="top: 80%; left: 60%;"></div>
+    </div>
+
+    <!-- Meteor jatuh -->
+    <div class="meteor" style="top: 10%; left: 50%;"></div>
+    <div class="meteor" style="top: 20%; left: 70%;"></div>
+    <div class="meteor" style="top: 30%; left: 30%;"></div>
+
+    <!-- Salib kiri dan kanan -->
+    <div class="left-cross cross"></div>
+    <div class="right-cross cross"></div>
+    
+    <!-- Emoji love -->
+    <div class="emoji">💖</div>
+
+    <!-- Ayat Alkitab: Filemon 1:3-5 -->
+    <div style="font-size: 18px; color: white; margin-top: 30px;">
+        <strong>Filemon 1:3-5</strong><br>
+        <i>"Kasih karunia dan damai dari Allah, Bapa kita dan dari Tuhan Yesus Kristus Menyertai kamu. Aku mengucap syukur kepada Allahku, setiap kali aku mengingat kamu dalam doaku, Karena aku mendengar tentang kasihmu kepada semua orang kudus dan tentang imanmu kepada Tuhan Yesus."</i>
+    </div>
+
+    <!-- Tombol -->
+    <button class="button" id="yesButton">Iya</button>
+    <button class="button" id="noButton">Tidak</button>
+
+    <div class="message" id="responseMessage"></div>
+
+    <script>
+        const yesButton = document.getElementById('yesButton');
+        const noButton = document.getElementById('noButton');
+        const responseMessage = document.getElementById('responseMessage');
+
+        noButton.addEventListener('click', function() {
+            // Pindahkan tombol "Tidak" ke posisi acak
+            const randomX = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const randomY = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.position = 'absolute';
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+
+            // Tambahkan emoji love berserakan
+            for (let i = 0; i < 5; i++) {
+                const loveMeteor = document.createElement('div');
+                loveMeteor.innerText = '💖';
+                loveMeteor.className = 'love-meteor';
+                loveMeteor.style.left = randomX + 'px';
+                loveMeteor.style.top = randomY + 'px';
+                document.body.appendChild(loveMeteor);
+
+                // Set random position for falling effect
+                const fallX = Math.random() * (window.innerWidth - 30); // 30 is the width of the emoji
+                loveMeteor.style.left = fallX + 'px';
+                loveMeteor.style.animationDelay = `${i * 0.5}s`; // Delay for each love meteor
+            }
+        });
+
+        yesButton.addEventListener('click', function() {
+            responseMessage.style.display = 'block';
+            responseMessage.innerHTML = "Terima kasih karena telah menerima akuuu nyaa cantikk, kamuu tauuu tidaakkk akuu sangat bahagia love youu sebesar-besarnyaa jangan lupa chat aku nya! 💖";
+            
+            // Setelah 4 detik (4000 ms), arahkan ke WhatsApp link dengan pesan
+            setTimeout(function() {
+                window.location.href = "https://wa.me/qr/WMJSXHP5T3IAD1?text=Halo%20aku%20mau%20sayang";  // Mengarahkan ke WhatsApp dengan pesan
+            }, 4000); // 4 detik (4000 ms) setelah memilih "Iya"
+        });
+    </script>
+
+</body>
+</html>
